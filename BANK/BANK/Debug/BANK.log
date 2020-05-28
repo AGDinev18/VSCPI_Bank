@@ -1,0 +1,4 @@
+﻿  helper.cpp
+C:\Users\alex_04\Documents\GitHub\PGCPI_Bank\BANK\BANK\helper.cpp(10,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\alex_04\Documents\GitHub\PGCPI_Bank\BANK\BANK\helper.cpp(148): warning C4715: 'subMenu': not all control paths return a value
+  BANK.vcxproj -> C:\Users\alex_04\Documents\GitHub\PGCPI_Bank\BANK\Debug\BANK.exe
