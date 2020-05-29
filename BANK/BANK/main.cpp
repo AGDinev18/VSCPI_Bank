@@ -1,12 +1,14 @@
 #include <iostream>
+#include <stdlib.h>
 #include "helper.h"
 #include "structures.h"
 using namespace std;
 
-int main(){
-	Welcoming();
+int main()
+{
+	system("color b");
 
-	USER users[100];
+	USER users[64];
 
 	int count = 0;
 
@@ -14,6 +16,7 @@ int main(){
 	do
 	{
 		showMenu = mainMenu(count,users);
+		system("cls");
 
 	} while (showMenu);
 
