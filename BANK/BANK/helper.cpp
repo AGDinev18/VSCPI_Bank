@@ -15,67 +15,6 @@ void checkForWrongInput(double variable) //Makes you enter a new option until yo
 	}
 }
 
-bool showRules()//Shows rules about interest and withdrawing
-{
-	int choice;
-	cout << "See about: " << endl;
-	cout << "1. Overdrafting" << endl;
-	cout << "2. Interest" << endl;
-	cout << "9. Exit" << endl;
-	cout << "Your choice: ";
-	cin >> choice;
-	switch (choice)
-	{
-		case 1:
-		cout << "How does an overdraft work?" << endl;
-		cout << "An overdraft lets you borrow money through your current account by taking out more money than you have in the account."<<endl;
-		cout << "There’s usually a charge for this." << endl;
-		cout << "You can ask your bank for an overdraft – or they might just give you one – but don’t forget that an overdraft is a type of loan." << endl;
-		cout << "If you need to borrow money, there might be cheaper ways to do it. It’s important to always find the cheapest way to borrow." << endl;
-		cout << "You have to give back the money you have overdrafted."<<endl;
-		break;
-		
-		case 2:
-		cout << "Interest’s rule, which is also referred to as the Interest rule or Taylor principle, is a proposed guideline for how central banks," << endl;
-		cout << "such as the Federal Reserve, should alter interest rates in response to changes in economic conditions." << endl;
-		cout << "Interst’s rule, introduced by economist Chavdar Interest, was established to adjustand set prudent rates for the short - term stabilization of the economy,"<<endl;
-		cout << "while still maintaining long - term growth.The rule is based on three factors:" << endl;
-		cout << "1. Targeted versus actual inflation levels" << endl;
-		cout << "2. Full employment versus actual employment levels" << endl;
-		cout << "3. The short-term interest rate appropriately consistent with full employment" << endl;
-		break;
-
-		case 9: return 0;
-		break;
-
-	default: break;
-	
-	}
-	return true;
-}
-
-void welcome() //Startup text
-{
-	cout << " _______________________________________________________________________________________________" << endl;
-	cout << "|                                                                                               |" << endl;
-	cout << "|               ////////////    ///////////       /////////     ////////////    ///////////     |" << endl;
-	cout << "|              ////    ////   ////              ////           ////    ////       ////          |" << endl;
-	cout << "|             ////    ////   ////             ////            ////    ////       ////           |" << endl;
-	cout << "|            ////////////   ////     /////   ////            ////////////       ////            |" << endl;
-	cout << "|           ////              ////     ////   ////          ////               ////             |" << endl;
-	cout << "|          ////                ///////////     /////////   ////            ///////////          |" << endl;
-	cout << "|                                                                                               |" << endl;
-	cout << "|        ///////////       ////\\\\\\\\               ////////      ////   ////////    //////       |" << endl;
-	cout << "|       ////     ////     ////  \\\\\\\\             //// ////     ////       ////   ////           |" << endl;
-	cout << "|      ////     ////     ////    \\\\\\\\           ////  ////    ////       ////  ////             |" << endl;
-	cout << "|     //////////        ///////\\\\\\\\\\\\\\         ////   ////   ////       ////////                |" << endl;
-	cout << "|    ////     ////     ////        \\\\\\\\       ////    ////  ////       ////  ////               |" << endl;
-	cout << "|   ////     ////     ////          \\\\\\\\     ////     //// ////       ////    ////              |" << endl;
-	cout << "|  ////////////      ////            \\\\\\\\   ////       ///////       ////      /////            |" << endl;
-	cout << "|_______________________________________________________________________________________________|";
-	cout << endl << endl;
-}
-
 bool checkPassword(string password) //Checks if your password contains small and big letters
 {
 	int countSmallLetters = 0;
@@ -96,7 +35,7 @@ bool checkPassword(string password) //Checks if your password contains small and
 		return 0;
 	}
 	return 1;
-	
+
 }
 
 int findUserByUsername(string username, int count, USER* users) //Checks if you entered your Username and Password Correctly
@@ -158,6 +97,30 @@ bool grantAccess(string username, string password, int count, USER* users) //Che
 	return 0;
 }
 
+////////////////presentation layer//////////////////////////
+
+void welcome() //Startup text
+{
+	cout << " _______________________________________________________________________________________________" << endl;
+	cout << "|                                                                                               |" << endl;
+	cout << "|               ////////////    ///////////       /////////     ////////////    ///////////     |" << endl;
+	cout << "|              ////    ////   ////              ////           ////    ////       ////          |" << endl;
+	cout << "|             ////    ////   ////             ////            ////    ////       ////           |" << endl;
+	cout << "|            ////////////   ////     /////   ////            ////////////       ////            |" << endl;
+	cout << "|           ////              ////     ////   ////          ////               ////             |" << endl;
+	cout << "|          ////                ///////////     /////////   ////            ///////////          |" << endl;
+	cout << "|                                                                                               |" << endl;
+	cout << "|        ///////////       ////\\\\\\\\               ////////      ////   ////////    //////       |" << endl;
+	cout << "|       ////     ////     ////  \\\\\\\\             //// ////     ////       ////   ////           |" << endl;
+	cout << "|      ////     ////     ////    \\\\\\\\           ////  ////    ////       ////  ////             |" << endl;
+	cout << "|     //////////        ///////\\\\\\\\\\\\\\         ////   ////   ////       ////////                |" << endl;
+	cout << "|    ////     ////     ////        \\\\\\\\       ////    ////  ////       ////  ////               |" << endl;
+	cout << "|   ////     ////     ////          \\\\\\\\     ////     //// ////       ////    ////              |" << endl;
+	cout << "|  ////////////      ////            \\\\\\\\   ////       ///////       ////      /////            |" << endl;
+	cout << "|_______________________________________________________________________________________________|";
+	cout << endl << endl;
+}
+
 void deposit(USER* users, int user) //Deposit money
 {
 	welcome();
@@ -182,7 +145,7 @@ void showCurrentBalance(USER* users, int count, int user) //Shows your current b
 {
 	welcome();
 	cout << "The current balance is: ";
-	cout << users[user].money<<"$"<<endl<<endl;
+	cout << users[user].money << "$" << endl << endl;
 }
 
 void showinterest(USER* users, int count, int user) //Shows what would be your balance after a certain amount of years
@@ -198,14 +161,7 @@ void showinterest(USER* users, int count, int user) //Shows what would be your b
 	{
 		sum += ((users[user].money) * (1 + interest));
 	}
-	cout <<"You will have: "<< sum<<" $" <<" after "<<years<<" years"<<" with interest of "<<interest*100<<"% "<< endl<<endl;
-}
-
-void overdraft()
-{
-	welcome();
-	int maxOverdraft = 1000000;
-
+	cout << "You will have: " << sum << " $" << " after " << years << " years" << " with interest of " << interest * 100 << "% " << endl << endl;
 }
 
 bool subMenu(int& count, USER* users, int user) //SubMenu that shows different options
@@ -256,7 +212,7 @@ void login(int& count, USER* users) //Login System
 	cin >> username;
 	cout << "Password: ";
 	cin >> password;
-	while (!grantAccess(username, password, count, users) && wrongCounter!=3)
+	while (!grantAccess(username, password, count, users) && wrongCounter != 3)
 	{
 		cout << "Your username/password is incorrect" << endl;
 		cout << "Please try again" << endl;
@@ -267,7 +223,7 @@ void login(int& count, USER* users) //Login System
 		wrongCounter++;
 	}
 	int user = findUserByUsername(username, count, users);
-	if (grantAccess(username, password, count, users) && wrongCounter!=3)
+	if (grantAccess(username, password, count, users) && wrongCounter != 3)
 	{
 		system("cls");
 		welcome();
@@ -279,9 +235,51 @@ void login(int& count, USER* users) //Login System
 	}
 }
 
+bool showRules()//Shows rules about interest and withdrawing
+{
+	int choice;
+	cout << endl;
+	cout << "See about: " << endl;
+	cout << "1. Overdrafting" << endl;
+	cout << "2. Interest" << endl;
+	cout << "9. Exit" << endl;
+	cout << "Your choice: ";
+	cin >> choice;
+	system("cls");
+	switch (choice)
+	{
+	case 1:
+		cout << "How does an overdraft work?" << endl;
+		cout << "An overdraft lets you borrow money through your current account by taking out more money than you have in the account." << endl;
+		cout << "There’s usually a charge for this." << endl;
+		cout << "You can ask your bank for an overdraft – or they might just give you one – but don’t forget that an overdraft is a type of loan." << endl;
+		cout << "If you need to borrow money, there might be cheaper ways to do it. It’s important to always find the cheapest way to borrow." << endl;
+		cout << "You have to give back the money you have overdrafted." << endl;
+		break;
+
+	case 2:
+		cout << "Interest’s rule, which is also referred to as the Interest rule or Taylor principle, is a proposed guideline for how central banks," << endl;
+		cout << "such as the Federal Reserve, should alter interest rates in response to changes in economic conditions." << endl;
+		cout << "Interst’s rule, introduced by economist Chavdar Interest, was established to adjustand set prudent rates for the short - term stabilization of the economy," << endl;
+		cout << "while still maintaining long - term growth.The rule is based on three factors:" << endl;
+		cout << "1. Targeted versus actual inflation levels" << endl;
+		cout << "2. Full employment versus actual employment levels" << endl;
+		cout << "3. The short-term interest rate appropriately consistent with full employment" << endl;
+		break;
+
+	case 9: return 0;
+		break;
+
+	default: break;
+
+	}
+	return true;
+}
+
 bool mainMenu(int& count, USER* users) //The menu that goes right after the startup text
 {
 	welcome();
+	bool showRulesMenu = true;
 	int choice;
 	cout << "1. Register" << endl;
 	cout << "2. Login" << endl;
@@ -299,7 +297,16 @@ bool mainMenu(int& count, USER* users) //The menu that goes right after the star
 	case 2: login(count, users);
 		break;
 
-	default:cout << "Try choosing an available option!"<<endl<<endl;
+	case 3:
+		do
+		{
+			showRulesMenu = showRules();
+
+		} while (showRulesMenu);
+
+		break;
+
+	default:cout << "Try choosing an available option!" << endl << endl;
 		break;
 
 	case 9: return 0;
