@@ -2,30 +2,36 @@
 #include "structures.h"
 using namespace std;
 
-void checkForWrongInput(double variable);
+////////////////Data Layer////////////////
 
-bool showRules();
+void checkForWrongInput(double variable); //Makes you enter a new option until you have entered a correct one
 
-void welcome();
+bool checkPassword(string password); //Checks if your password contains small and big letters
 
-bool checkPassword(string password);
+int findUserByUsername(string username, int count, USER* users); //Checks if you entered your Username and Password Correctly
 
-int findUserByUsername(string username, int count, USER* users);
+void registration(int& count, USER* users); //Creating user account
 
-void registration(int& count, USER* users);
+bool grantAccess(string username, string password, int count, USER* users); //Checks if you enter valid username and password
 
-bool grantAccess(string username, string password, int count, USER* users);
 
-void deposit(USER* users, int user);
+////////////////Presentation layer////////////////
 
-void withdraw(USER* users, int user);
 
-void showCurrentBalance(USER* users, int count, int user);
+void welcome(); //Header text
 
-void showinterest(USER* users, int count, int user);
+void deposit(USER* users, int user); //Deposit money
 
-bool subMenu(int& count, USER* users, int user);
+void withdraw(USER* users, int user); //Withdraw money
 
-void login(int& count, USER* users);
+void showCurrentBalance(USER* users, int count, int user); //Shows your current balance
 
-bool mainMenu(int& count, USER* users);
+void showinterest(USER* users, int count, int user); //Shows what would be your balance after a certain amount of years
+
+bool subMenu(int count, USER* users, int user); //Submenu that shows different options
+
+void login(int count, USER* users); //Login System
+
+bool showRules(); //Shows rules about interest and withdrawing
+
+bool mainMenu(int& count, USER* users); //The menu that goes right after the startup text

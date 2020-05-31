@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "structures.h"
 using namespace std;
-
+////////////////Data Layer////////////////
 void checkForWrongInput(double variable) //Makes you enter a new option until you have entered a correct one
 {
 	while (cin.fail())
@@ -50,7 +50,7 @@ int findUserByUsername(string username, int count, USER* users) //Checks if you 
 	return -1;
 }
 
-void registration(int& count, USER* users) //creating user account
+void registration(int& count, USER* users) //Creating user account
 {
 	cout << "First Name: ";
 	cin >> users[count].fName;
@@ -85,7 +85,7 @@ void registration(int& count, USER* users) //creating user account
 	count++;
 }
 
-bool grantAccess(string username, string password, int count, USER* users) //Checks if you 
+bool grantAccess(string username, string password, int count, USER* users) //Checks if you enter valid username and password 
 {
 	for (int i = 0; i < count; i++)
 	{
@@ -97,18 +97,20 @@ bool grantAccess(string username, string password, int count, USER* users) //Che
 	return 0;
 }
 
-////////////////presentation layer//////////////////////////
 
-void welcome() //Startup text
+////////////////Presentation Layer////////////////
+
+
+void welcome() //Header text
 {
 	cout << " _______________________________________________________________________________________________" << endl;
 	cout << "|                                                                                               |" << endl;
-	cout << "|               ////////////    ///////////       /////////     ////////////    ///////////     |" << endl;
-	cout << "|              ////    ////   ////              ////           ////    ////       ////          |" << endl;
-	cout << "|             ////    ////   ////             ////            ////    ////       ////           |" << endl;
-	cout << "|            ////////////   ////     /////   ////            ////////////       ////            |" << endl;
-	cout << "|           ////              ////     ////   ////          ////               ////             |" << endl;
-	cout << "|          ////                ///////////     /////////   ////            ///////////          |" << endl;
+	cout << "|     \\\\\\\\          ////    ////////////      /////////     ////////////    ////////////        |" << endl;
+	cout << "|      \\\\\\\\        ////    ////             ////           ////    ////        ////             |" << endl;
+	cout << "|       \\\\\\\\      ////      /////         ////            ////    ////        ////              |" << endl;
+	cout << "|        \\\\\\\\    ////           /////    ////            ////////////        ////               |" << endl;
+	cout << "|         \\\\\\\\  ////              ////    ////          ////                ////                |" << endl;
+	cout << "|          \\\\\\\\////       ////////////     ////////    ////            ////////////             |" << endl;
 	cout << "|                                                                                               |" << endl;
 	cout << "|        ///////////       ////\\\\\\\\               ////////      ////   ////////    //////       |" << endl;
 	cout << "|       ////     ////     ////  \\\\\\\\             //// ////     ////       ////   ////           |" << endl;
@@ -164,7 +166,7 @@ void showinterest(USER* users, int count, int user) //Shows what would be your b
 	cout << "You will have: " << sum << " $" << " after " << years << " years" << " with interest of " << interest * 100 << "% " << endl << endl;
 }
 
-bool subMenu(int& count, USER* users, int user) //SubMenu that shows different options
+bool subMenu(int count, USER* users, int user) //Submenu that shows different options
 {
 	cout << "1. Deposit" << endl;
 	cout << "2. Withdraw" << endl;
@@ -204,7 +206,7 @@ bool subMenu(int& count, USER* users, int user) //SubMenu that shows different o
 	return 1;
 }
 
-void login(int& count, USER* users) //Login System
+void login(int count, USER* users) //Login System
 {
 	int wrongCounter = 0;
 	string username, password;
@@ -249,6 +251,7 @@ bool showRules()//Shows rules about interest and withdrawing
 	switch (choice)
 	{
 	case 1:
+		welcome();
 		cout << "How does an overdraft work?" << endl;
 		cout << "An overdraft lets you borrow money through your current account by taking out more money than you have in the account." << endl;
 		cout << "There’s usually a charge for this." << endl;
@@ -258,6 +261,7 @@ bool showRules()//Shows rules about interest and withdrawing
 		break;
 
 	case 2:
+		welcome();
 		cout << "Interest’s rule, which is also referred to as the Interest rule or Taylor principle, is a proposed guideline for how central banks," << endl;
 		cout << "such as the Federal Reserve, should alter interest rates in response to changes in economic conditions." << endl;
 		cout << "Interst’s rule, introduced by economist Chavdar Interest, was established to adjustand set prudent rates for the short - term stabilization of the economy," << endl;
@@ -270,7 +274,8 @@ bool showRules()//Shows rules about interest and withdrawing
 	case 9: return 0;
 		break;
 
-	default: break;
+	default: welcome();
+		break;
 
 	}
 	return true;
