@@ -26,7 +26,7 @@ void withdraw(USER* users, int user); //Withdraw money
 
 void showCurrentBalance(USER* users, int count, int user); //Shows your current balance
 
-void showinterest(USER* users, int count, int user); //Shows what would be your balance after a certain amount of years
+void showInterest(USER* users, int count, int user); //Shows what would be your balance after a certain amount of years
 
 bool subMenu(int count, USER* users, int user); //Submenu that shows different options
 

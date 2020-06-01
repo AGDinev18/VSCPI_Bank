@@ -150,20 +150,20 @@ void showCurrentBalance(USER* users, int count, int user) //Shows your current b
 	cout << users[user].money << "$" << endl << endl;
 }
 
-void showinterest(USER* users, int count, int user) //Shows what would be your balance after a certain amount of years
+void showInterest(USER* users, int count, int user) //Shows what would be your balance after a certain amount of years
 {
 	welcome();
 	const double interest = 0.05;
-	double sum = 0;
 	int years;
+	double finalbalance = users[user].money;
 	cout << "Years ahead: ";
 	cin >> years;
 	checkForWrongInput(years);
 	for (int i = 0; i < years; i++)
 	{
-		sum += ((users[user].money) * (1 + interest));
+		finalbalance = finalbalance * (1 + interest);
 	}
-	cout << "You will have: " << sum << " $" << " after " << years << " years" << " with interest of " << interest * 100 << "% " << endl << endl;
+	cout << "You will have: " << finalbalance << " $" << " after " << years << " years" << " with interest of " << interest * 100 << "% " << endl << endl;
 }
 
 bool subMenu(int count, USER* users, int user) //Submenu that shows different options
@@ -194,7 +194,7 @@ bool subMenu(int count, USER* users, int user) //Submenu that shows different op
 	case 3:showCurrentBalance(users, count, user);
 		break;
 
-	case 4:showinterest(users, count, user);
+	case 4:showInterest(users, count, user);
 		break;
 
 	case 9: return 0;
